@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Plus Jakarta Sans';
+    background: #F8F9FC;
+}
+
+.container {
+    padding: 40px;
+}
+
+h1 {
+    color: #2D3436;
+}
+
+.menu {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+    background: #6C63FF;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.status{
+    padding:5px 10px;
+    border-radius:8px;
+}
+
+.PENDING{ background:orange; color:white; }
+.APPROVED{ background:green; color:white; }
+.RETURNED{ background:gray; color:white; }

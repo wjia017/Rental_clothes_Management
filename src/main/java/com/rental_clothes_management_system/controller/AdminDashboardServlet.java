@@ -6,36 +6,35 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import com.rental_clothes_management_system.utils.DBconfig;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import com.rental_clothes_management_system.DAO.AdminDAO;
 
 /**
  * Servlet implementation class AdminDashboardServlet
  */
-@WebServlet(asyncSupported = true, urlPatterns = { "/admin" })
+
+@WebServlet("/admin/dashboard")
 public class AdminDashboardServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AdminDashboardServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        try {
+
+            AdminDAO dao = new AdminDAO();
+
+            request.setAttribute("totalUsers", dao.countUsers());
+            request.setAttribute("totalClothes", dao.countClothes());
+            request.setAttribute("pendingRentals", dao.countPendingRentals());
+
+            request.getRequestDispatcher("/WEB-INF/pages/admin/dashboard.jsp")
+                    .forward(request, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

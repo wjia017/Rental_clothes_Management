@@ -1,0 +1,124 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Plus Jakarta Sans', sans-serif;
+}
+
+body{
+    background:#F8F9FC;
+}
+
+/* LAYOUT */
+.layout{
+    display:flex;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:240px;
+    background:#6C63FF;
+    color:white;
+    padding:20px;
+}
+
+.brand h2{
+    margin-bottom:30px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.menu a:hover,
+.menu a.active{
+    background:rgba(255,255,255,0.2);
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:30px;
+}
+
+/* HEADER */
+.header h1{
+    font-size:28px;
+    color:#2D3436;
+}
+
+.header p{
+    color:#777;
+    margin-bottom:20px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+}
+
+.card{
+    background:#FFFFFF;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card-title{
+    color:#777;
+    font-size:14px;
+}
+
+.card-value{
+    font-size:28px;
+    font-weight:700;
+    margin-top:10px;
+    color:#2D3436;
+}
+
+/* COLORS */
+.warning .card-value{
+    color:#FFB020;
+}
+
+.success .card-value{
+    color:#28C76F;
+}
+
+/* QUICK ACTIONS */
+.section{
+    margin-top:30px;
+}
+
+.actions{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+.actions a{
+    background:#6C63FF;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.actions a:hover{
+    background:#574fd6;
+}
